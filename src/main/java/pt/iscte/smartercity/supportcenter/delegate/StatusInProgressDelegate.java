@@ -16,7 +16,7 @@ public class StatusInProgressDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        log.debug("RUNNING DELEGATE TASK: StatusInProgressDelegate");
+        log.info("RUNNING DELEGATE TASK: StatusInProgressDelegate");
 
         //GET PROCESS INSTANCE
         SupportProcessDTO supportProcess = (SupportProcessDTO) delegateExecution.getVariable("processInstance");

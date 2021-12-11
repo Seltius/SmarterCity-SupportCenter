@@ -19,6 +19,7 @@
         "refundProcess": "Refund Process",
         "fillSupportRequest": "Fill Support Request",
         "analyseSupportRequest": "Analyse Support Request",
+        "provideSupportResponse": "Provide Support Response",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -21,7 +21,7 @@ public class SupportRequestDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        log.debug("RUNNING DELEGATE TASK: SupportRequestDelegate");
+        log.info("RUNNING DELEGATE TASK: SupportRequestDelegate");
 
         //GET PROCESS INSTANCE
         SupportProcessDTO supportProcess = (SupportProcessDTO) delegateExecution.getVariable("processInstance");

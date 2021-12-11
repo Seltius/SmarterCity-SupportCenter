@@ -1,0 +1,29 @@
+{
+  "smarterCitySupportCenterApp": {
+    "provideSupportResponse": {
+      "home": {
+        "title": "Provide Support Responses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Provide Support Response",
+        "createOrEditLabel": "Create or edit a Provide Support Response",
+        "notFound": "No Provide Support Responses found"
+      },
+      "created": "A new Provide Support Response is created with identifier {{ param }}",
+      "updated": "A Provide Support Response is updated with identifier {{ param }}",
+      "deleted": "A Provide Support Response is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Provide Support Response {{ id }}?"
+      },
+      "detail": {
+        "title": "Provide Support Response"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "startDate": "Start Date",
+      "userName": "User Name",
+      "email": "Email",
+      "message": "Message",
+      "supportMessage": "Support Message"
+    }
+  }
+}

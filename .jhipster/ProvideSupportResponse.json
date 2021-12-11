@@ -1,0 +1,48 @@
+{
+  "fields": [
+    {
+      "fieldName": "supportId",
+      "fieldType": "Integer",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "supportMessage",
+      "fieldType": "String",
+      "fieldReadOnly": false
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "SupportProcess",
+  "processEntityName": "SupportProcess",
+  "taskBpmnId": "ProvideSupportResponse",
+  "domainEntityName": "Support",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "ProvideSupportResponse",
+  "changelogDate": "20211210162446"
+}
