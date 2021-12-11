@@ -5,8 +5,8 @@ import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pt.iscte.registration.service.SupportService;
-import pt.iscte.registration.service.dto.SupportProcessDTO;
+import pt.iscte.smartercity.supportcenter.service.SupportService;
+import pt.iscte.smartercity.supportcenter.service.dto.SupportProcessDTO;
 
 @Component
 public class SupportRequestDelegate implements JavaDelegate {

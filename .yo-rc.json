@@ -51,6 +51,7 @@
     "jwtSecretKey": "ZTBlYzY4NGM3MGYzMWE0MzAwYzA4ZDVjMGEyYjg4MTQ0Mjg2YmFjNGJiMGEyOGI2MTZhMTIyZDNiODI3YmNlYjkwZWQzNmQ2YzBlNTg0YmVhMjQyMGQ0YTdiY2JhMjA3MTc0NGRmNDI0MmQ5ZDlkYmVhYzZmMTYyZjg2YTIxOGY=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en"]
+    "languages": ["en"],
+    "entities": ["Refund", "Support"]
   }
 }

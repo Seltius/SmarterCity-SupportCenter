@@ -1,0 +1,29 @@
+{
+  "smarterCitySupportCenterApp": {
+    "analyseSupportRequest": {
+      "home": {
+        "title": "Analyse Support Requests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Analyse Support Request",
+        "createOrEditLabel": "Create or edit a Analyse Support Request",
+        "notFound": "No Analyse Support Requests found"
+      },
+      "created": "A new Analyse Support Request is created with identifier {{ param }}",
+      "updated": "A Analyse Support Request is updated with identifier {{ param }}",
+      "deleted": "A Analyse Support Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Analyse Support Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Analyse Support Request"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "startDate": "Start Date",
+      "userName": "User Name",
+      "email": "Email",
+      "message": "Message",
+      "isRefund": "Is Refund"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "smarterCitySupportCenterApp": {
+    "fillSupportRequest": {
+      "home": {
+        "title": "Fill Support Requests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fill Support Request",
+        "createOrEditLabel": "Create or edit a Fill Support Request",
+        "notFound": "No Fill Support Requests found"
+      },
+      "created": "A new Fill Support Request is created with identifier {{ param }}",
+      "updated": "A Fill Support Request is updated with identifier {{ param }}",
+      "deleted": "A Fill Support Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fill Support Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Fill Support Request"
+      },
+      "id": "ID",
+      "userName": "User Name",
+      "email": "Email",
+      "message": "Message"
+    }
+  }
+}

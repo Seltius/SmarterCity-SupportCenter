@@ -1,0 +1,26 @@
+{
+  "smarterCitySupportCenterApp": {
+    "refundProcess": {
+      "home": {
+        "title": "Refund Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Refund Process",
+        "createOrEditLabel": "Create or edit a Refund Process",
+        "notFound": "No Refund Processes found"
+      },
+      "created": "A new Refund Process is created with identifier {{ param }}",
+      "updated": "A Refund Process is updated with identifier {{ param }}",
+      "deleted": "A Refund Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Refund Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Refund Process"
+      },
+      "id": "ID",
+      "refundId": "Refund Id",
+      "amount": "Amount",
+      "method": "Method"
+    }
+  }
+}

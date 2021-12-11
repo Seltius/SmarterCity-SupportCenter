@@ -1,0 +1,27 @@
+{
+  "smarterCitySupportCenterApp": {
+    "support": {
+      "home": {
+        "title": "Supports",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Supports found"
+      },
+      "detail": {
+        "title": "Support"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "userName": "User Name",
+      "email": "Email",
+      "message": "Message",
+      "isRefund": "Is Refund",
+      "isValid": "Is Valid",
+      "refundId": "Refund Id",
+      "isResolved": "Is Resolved",
+      "status": "Status",
+      "supportMessage": "Support Message"
+    }
+  }
+}

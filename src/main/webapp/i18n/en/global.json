@@ -12,6 +12,13 @@
         "processInstance": "Process Instances",
         "taskInstance": "All Tasks",
         "myCandidateTasks": "My Tasks",
+        "supportStartForm": "Support Start Form",
+        "refund": "Refund",
+        "support": "Support",
+        "supportProcess": "Support Process",
+        "refundProcess": "Refund Process",
+        "fillSupportRequest": "Fill Support Request",
+        "analyseSupportRequest": "Analyse Support Request",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

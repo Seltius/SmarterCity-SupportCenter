@@ -1,0 +1,23 @@
+{
+  "smarterCitySupportCenterApp": {
+    "supportStartForm": {
+      "home": {
+        "title": "Support Start Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Support Start Form",
+        "createOrEditLabel": "Create or edit a Support Start Form",
+        "notFound": "No Support Start Forms found"
+      },
+      "created": "A new Support Start Form is created with identifier {{ param }}",
+      "updated": "A Support Start Form is updated with identifier {{ param }}",
+      "deleted": "A Support Start Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Support Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Support Start Form"
+      },
+      "id": "ID"
+    }
+  }
+}

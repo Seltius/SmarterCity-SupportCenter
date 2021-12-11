@@ -1,0 +1,35 @@
+{
+  "smarterCitySupportCenterApp": {
+    "supportProcess": {
+      "home": {
+        "title": "Support Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Support Process",
+        "createOrEditLabel": "Create or edit a Support Process",
+        "notFound": "No Support Processes found"
+      },
+      "created": "A new Support Process is created with identifier {{ param }}",
+      "updated": "A Support Process is updated with identifier {{ param }}",
+      "deleted": "A Support Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Support Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Support Process"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "userName": "User Name",
+      "email": "Email",
+      "message": "Message",
+      "isRefund": "Is Refund",
+      "isValid": "Is Valid",
+      "refundId": "Refund Id",
+      "isResolved": "Is Resolved",
+      "status": "Status",
+      "supportMessage": "Support Message"
+    }
+  }
+}

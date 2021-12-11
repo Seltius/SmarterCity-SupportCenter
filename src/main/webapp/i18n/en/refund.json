@@ -1,0 +1,18 @@
+{
+  "smarterCitySupportCenterApp": {
+    "refund": {
+      "home": {
+        "title": "Refunds",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Refunds found"
+      },
+      "detail": {
+        "title": "Refund"
+      },
+      "id": "ID",
+      "refundId": "Refund Id",
+      "amount": "Amount",
+      "method": "Method"
+    }
+  }
+}
