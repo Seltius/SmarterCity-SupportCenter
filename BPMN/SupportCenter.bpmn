@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0p2eprr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="SupportProcess" name="Support Center" isExecutable="true">
+    <bpmn:documentation># Welcome Test
+Your satisfaction is our top priority and we're looking forward to assisting you.
+Please submit your request and soon as possible we will reply to you.
+
+
+
+
+Best Regards,
+HelpDesk Team</bpmn:documentation>
+    <bpmn:startEvent id="StartSupport" name="Start Support">
+      <bpmn:outgoing>Flow_07thyrb</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="FillSupportRequest" name="Fill support request">
+      <bpmn:documentation># Welcome
+Your satisfaction is our top priority and we're looking forward to assisting you.
+Please submit your request and soon as possible we will reply to you.
+
+
+
+
+
+
+
+
+Best Regards,
+HelpDesk Team</bpmn:documentation>
+      <bpmn:incoming>Flow_07thyrb</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ck5al1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="AnalyseSupportRequest" name="Analyse support request">
+      <bpmn:incoming>Flow_1k52gi3</bpmn:incoming>
+      <bpmn:outgoing>Flow_124ycsn</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="IsRefund" name="is a refund ?">
+      <bpmn:incoming>Flow_124ycsn</bpmn:incoming>
+      <bpmn:outgoing>IsRefundNo</bpmn:outgoing>
+      <bpmn:outgoing>IsRefundYes</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="Gateway_104kfno">
+      <bpmn:incoming>IsResolveNo</bpmn:incoming>
+      <bpmn:incoming>IsRefundNo</bpmn:incoming>
+      <bpmn:outgoing>Flow_0kzup3a</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="ProvideSupportResponse" name="Provide support response">
+      <bpmn:incoming>Flow_0kzup3a</bpmn:incoming>
+      <bpmn:outgoing>Flow_1xr69pm</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="ReadSupportResponse" name="Read support response and identify if it&#39;s resolved">
+      <bpmn:incoming>Flow_1xr69pm</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rp1yw7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="IsResolve" name="is support request resolved ?">
+      <bpmn:incoming>Flow_1rp1yw7</bpmn:incoming>
+      <bpmn:outgoing>IsResolveNo</bpmn:outgoing>
+      <bpmn:outgoing>IsResolveYes</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="Gateway_074vlss">
+      <bpmn:incoming>IsResolveYes</bpmn:incoming>
+      <bpmn:outgoing>Flow_06ptpis</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sendTask id="SendClosedStatus" name="Send an email notifying user about fixed status (Closed)" camunda:delegateExpression="${sendClosedEmailDelegate}">
+      <bpmn:incoming>Flow_06ptpis</bpmn:incoming>
+      <bpmn:outgoing>Flow_0przme7</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:endEvent id="EndSupport" name="End Support">
+      <bpmn:incoming>Flow_0przme7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_07thyrb" sourceRef="StartSupport" targetRef="FillSupportRequest" />
+    <bpmn:sequenceFlow id="Flow_1ck5al1" sourceRef="FillSupportRequest" targetRef="ProcessSupportRequest" />
+    <bpmn:sequenceFlow id="Flow_124ycsn" sourceRef="AnalyseSupportRequest" targetRef="IsRefund" />
+    <bpmn:sequenceFlow id="IsRefundNo" name="No" sourceRef="IsRefund" targetRef="Gateway_104kfno">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!(processInstance.support.isRefund)}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0kzup3a" sourceRef="Gateway_104kfno" targetRef="ProvideSupportResponse" />
+    <bpmn:sequenceFlow id="IsResolveNo" name="No" sourceRef="IsResolve" targetRef="Gateway_104kfno">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${! (processInstance.support.isResolved == true) }</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1xr69pm" sourceRef="ProvideSupportResponse" targetRef="ReadSupportResponse" />
+    <bpmn:sequenceFlow id="Flow_1rp1yw7" sourceRef="ReadSupportResponse" targetRef="IsResolve" />
+    <bpmn:sequenceFlow id="IsResolveYes" name="Yes" sourceRef="IsResolve" targetRef="Gateway_074vlss">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${processInstance.support.isRefund == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_06ptpis" sourceRef="Gateway_074vlss" targetRef="SendClosedStatus" />
+    <bpmn:sequenceFlow id="Flow_0przme7" sourceRef="SendClosedStatus" targetRef="EndSupport" />
+    <bpmn:userTask id="AnalyseRefundRequest" name="Analyse refund request">
+      <bpmn:incoming>IsRefundYes</bpmn:incoming>
+      <bpmn:outgoing>Flow_0nrbo53</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="IsRefundYes" name="Yes" sourceRef="IsRefund" targetRef="AnalyseRefundRequest">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${processInstance.support.isRefund}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="IsValid" name="is a valid refund request ?">
+      <bpmn:incoming>Flow_0nrbo53</bpmn:incoming>
+      <bpmn:outgoing>IsValidNo</bpmn:outgoing>
+      <bpmn:outgoing>IsValidYes</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0nrbo53" sourceRef="AnalyseRefundRequest" targetRef="IsValid" />
+    <bpmn:exclusiveGateway id="Gateway_0b8iaf9">
+      <bpmn:incoming>IsValidNo</bpmn:incoming>
+      <bpmn:incoming>Flow_03p8cdr</bpmn:incoming>
+      <bpmn:outgoing>Flow_1l4rz7e</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="IsValidNo" name="No" sourceRef="IsValid" targetRef="Gateway_0b8iaf9">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${! (processInstance.support.isValid == true) }</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sendTask id="SendEmail" name="Send an email notifying user about support status" camunda:delegateExpression="${sendStatusEmailDelegate}">
+      <bpmn:incoming>Flow_1l4rz7e</bpmn:incoming>
+      <bpmn:outgoing>Flow_0nhnpv7</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:sequenceFlow id="Flow_1l4rz7e" sourceRef="Gateway_0b8iaf9" targetRef="SendEmail" />
+    <bpmn:endEvent id="EndRefund" name="End Support">
+      <bpmn:incoming>Flow_0nhnpv7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:exclusiveGateway id="Gateway_0kuhh5b">
+      <bpmn:incoming>IsValidYes</bpmn:incoming>
+      <bpmn:outgoing>Flow_0gegndd</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="IsValidYes" name="Yes" sourceRef="IsValid" targetRef="Gateway_0kuhh5b">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${processInstance.support.isValid == true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="FillRefundForm" name="Fill refund form">
+      <bpmn:incoming>Flow_0gegndd</bpmn:incoming>
+      <bpmn:outgoing>Flow_03p8cdr</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_0gegndd" sourceRef="Gateway_0kuhh5b" targetRef="FillRefundForm" />
+    <bpmn:sequenceFlow id="Flow_03p8cdr" sourceRef="FillRefundForm" targetRef="Gateway_0b8iaf9" />
+    <bpmn:sequenceFlow id="Flow_0nhnpv7" sourceRef="SendEmail" targetRef="EndRefund" />
+    <bpmn:serviceTask id="ProcessSupportRequest" name="Process support request" camunda:delegateExpression="${supportRequestDelegate}">
+      <bpmn:incoming>Flow_1ck5al1</bpmn:incoming>
+      <bpmn:outgoing>Flow_1k52gi3</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1k52gi3" sourceRef="ProcessSupportRequest" targetRef="AnalyseSupportRequest" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="SupportProcess">
+      <bpmndi:BPMNEdge id="Flow_1k52gi3_di" bpmnElement="Flow_1k52gi3">
+        <di:waypoint x="350" y="310" />
+        <di:waypoint x="350" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nhnpv7_di" bpmnElement="Flow_0nhnpv7">
+        <di:waypoint x="1450" y="620" />
+        <di:waypoint x="1552" y="620" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03p8cdr_di" bpmnElement="Flow_03p8cdr">
+        <di:waypoint x="1230" y="780" />
+        <di:waypoint x="1400" y="780" />
+        <di:waypoint x="1400" y="710" />
+        <di:waypoint x="1180" y="710" />
+        <di:waypoint x="1180" y="645" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0gegndd_di" bpmnElement="Flow_0gegndd">
+        <di:waypoint x="765" y="780" />
+        <di:waypoint x="1130" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09kotb9_di" bpmnElement="IsValidYes">
+        <di:waypoint x="740" y="645" />
+        <di:waypoint x="740" y="755" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="746" y="645" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1l4rz7e_di" bpmnElement="Flow_1l4rz7e">
+        <di:waypoint x="1205" y="620" />
+        <di:waypoint x="1350" y="620" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0btnpqf_di" bpmnElement="IsValidNo">
+        <di:waypoint x="765" y="620" />
+        <di:waypoint x="1155" y="620" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="772" y="602" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0nrbo53_di" bpmnElement="Flow_0nrbo53">
+        <di:waypoint x="640" y="620" />
+        <di:waypoint x="715" y="620" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xelij4_di" bpmnElement="IsRefundYes">
+        <di:waypoint x="590" y="445" />
+        <di:waypoint x="590" y="580" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="596" y="453" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0przme7_di" bpmnElement="Flow_0przme7">
+        <di:waypoint x="1820" y="190" />
+        <di:waypoint x="1932" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06ptpis_di" bpmnElement="Flow_06ptpis">
+        <di:waypoint x="1595" y="190" />
+        <di:waypoint x="1720" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0udwp9w_di" bpmnElement="IsResolveYes">
+        <di:waypoint x="1205" y="110" />
+        <di:waypoint x="1570" y="110" />
+        <di:waypoint x="1570" y="165" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1211" y="84" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rp1yw7_di" bpmnElement="Flow_1rp1yw7">
+        <di:waypoint x="1000" y="110" />
+        <di:waypoint x="1155" y="110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xr69pm_di" bpmnElement="Flow_1xr69pm">
+        <di:waypoint x="950" y="230" />
+        <di:waypoint x="950" y="150" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ghydi5_di" bpmnElement="IsResolveNo">
+        <di:waypoint x="1180" y="135" />
+        <di:waypoint x="1180" y="420" />
+        <di:waypoint x="975" y="420" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1188" y="135" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0kzup3a_di" bpmnElement="Flow_0kzup3a">
+        <di:waypoint x="950" y="395" />
+        <di:waypoint x="950" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1twxyfq_di" bpmnElement="IsRefundNo">
+        <di:waypoint x="615" y="420" />
+        <di:waypoint x="925" y="420" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="622" y="402" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_124ycsn_di" bpmnElement="Flow_124ycsn">
+        <di:waypoint x="400" y="420" />
+        <di:waypoint x="565" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ck5al1_di" bpmnElement="Flow_1ck5al1">
+        <di:waypoint x="350" y="150" />
+        <di:waypoint x="350" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07thyrb_di" bpmnElement="Flow_07thyrb">
+        <di:waypoint x="208" y="110" />
+        <di:waypoint x="300" y="110" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_10ictu5_di" bpmnElement="StartSupport">
+        <dc:Bounds x="172" y="92" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="158" y="135" width="66" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0o97773_di" bpmnElement="FillSupportRequest">
+        <dc:Bounds x="300" y="70" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1njvd18_di" bpmnElement="AnalyseSupportRequest">
+        <dc:Bounds x="300" y="380" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0kkvs6g_di" bpmnElement="IsRefund" isMarkerVisible="true">
+        <dc:Bounds x="565" y="395" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="559" y="373" width="61" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_104kfno_di" bpmnElement="Gateway_104kfno" isMarkerVisible="true">
+        <dc:Bounds x="925" y="395" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0advbeb_di" bpmnElement="ProvideSupportResponse">
+        <dc:Bounds x="900" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0onhw06_di" bpmnElement="ReadSupportResponse">
+        <dc:Bounds x="900" y="70" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0251ooi_di" bpmnElement="IsResolve" isMarkerVisible="true">
+        <dc:Bounds x="1155" y="85" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1136" y="56" width="89" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_074vlss_di" bpmnElement="Gateway_074vlss" isMarkerVisible="true">
+        <dc:Bounds x="1545" y="165" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_030rxs5_di" bpmnElement="SendClosedStatus">
+        <dc:Bounds x="1720" y="150" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1qznse7_di" bpmnElement="EndSupport">
+        <dc:Bounds x="1932" y="172" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1919" y="215" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ge6d8v_di" bpmnElement="AnalyseRefundRequest">
+        <dc:Bounds x="540" y="580" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0zlgazp_di" bpmnElement="IsValid" isMarkerVisible="true">
+        <dc:Bounds x="715" y="595" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="701" y="566" width="78" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0b8iaf9_di" bpmnElement="Gateway_0b8iaf9" isMarkerVisible="true">
+        <dc:Bounds x="1155" y="595" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wcq71g_di" bpmnElement="SendEmail">
+        <dc:Bounds x="1350" y="580" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_039fi5s_di" bpmnElement="EndRefund">
+        <dc:Bounds x="1552" y="602" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1539" y="645" width="63" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0kuhh5b_di" bpmnElement="Gateway_0kuhh5b" isMarkerVisible="true">
+        <dc:Bounds x="715" y="755" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1je39j7_di" bpmnElement="FillRefundForm">
+        <dc:Bounds x="1130" y="740" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1pj84kj_di" bpmnElement="ProcessSupportRequest">
+        <dc:Bounds x="300" y="230" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
