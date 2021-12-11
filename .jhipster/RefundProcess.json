@@ -1,0 +1,28 @@
+{
+  "fields": [
+    {
+      "fieldName": "refundId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "process-binding",
+  "processBpmnId": "SupportProcess",
+  "domainEntityName": "Refund",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "RefundProcess",
+  "changelogDate": "20211210160601"
+}

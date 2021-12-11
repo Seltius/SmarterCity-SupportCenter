@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "fieldName": "supportId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isRefund",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isValid",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "refundId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isResolved",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportMessage",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "process-binding",
+  "processBpmnId": "SupportProcess",
+  "domainEntityName": "Support",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "SupportProcess",
+  "changelogDate": "20211210160024"
+}

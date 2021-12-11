@@ -1,0 +1,62 @@
+{
+  "fields": [
+    {
+      "fieldName": "supportId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isRefund",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isValid",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "refundId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isResolved",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportMessage",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": true,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "Support",
+  "changelogDate": "20211210155219"
+}

@@ -1,0 +1,26 @@
+{
+  "fields": [
+    {
+      "fieldName": "refundId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": true,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "Refund",
+  "changelogDate": "20211210153654"
+}

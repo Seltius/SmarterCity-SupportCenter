@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "fieldName": "userName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "SupportProcess",
+  "processEntityName": "SupportProcess",
+  "taskBpmnId": "FillSupportRequest",
+  "domainEntityName": "Support",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "skipFakeData": true,
+  "name": "FillSupportRequest",
+  "changelogDate": "20211210161923"
+}
