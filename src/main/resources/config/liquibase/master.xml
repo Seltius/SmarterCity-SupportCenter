@@ -24,6 +24,8 @@
     <include file="config/liquibase/changelog/20211210162446_added_entity_AnalyseSupportRequest.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20211210162446_added_entity_ProvideSupportResponse.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20211210162446_added_entity_ReadSupportResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211210155219_added_entity_Message.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211210160024_added_entity_MessageProcess.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->

@@ -1,0 +1,19 @@
+{
+  "smarterCitySupportCenterApp": {
+    "message": {
+      "home": {
+        "title": "Messages",
+        "refreshListLabel": "Refresh list",
+        "notFound": "No Messages found"
+      },
+      "detail": {
+        "title": "Message"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "date": "Date",
+      "messageType": "Message Type",
+      "value": "Value"
+    }
+  }
+}

@@ -1,20 +1,19 @@
 package pt.iscte.smartercity.supportcenter.service.dto;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 import org.akip.service.dto.ProcessInstanceDTO;
 
 /**
- * A DTO for the {@link pt.iscte.smartercity.supportcenter.domain.SupportProcess} entity.
+ * A DTO for the {@link pt.iscte.smartercity.supportcenter.domain.MessageProcess} entity.
  */
-public class SupportProcessDTO implements Serializable {
+public class MessageProcessDTO implements Serializable {
 
     private Long id;
 
     private ProcessInstanceDTO processInstance;
 
-    private SupportDTO support;
+    private MessageDTO message;
 
     public Long getId() {
         return id;
@@ -32,12 +31,12 @@ public class SupportProcessDTO implements Serializable {
         this.processInstance = processInstance;
     }
 
-    public SupportDTO getSupport() {
-        return support;
+    public MessageDTO getMessage() {
+        return message;
     }
 
-    public void setSupport(SupportDTO support) {
-        this.support = support;
+    public void setMessage(MessageDTO message) {
+        this.message = message;
     }
 
     @Override
@@ -45,15 +44,15 @@ public class SupportProcessDTO implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof SupportProcessDTO)) {
+        if (!(o instanceof MessageProcessDTO)) {
             return false;
         }
 
-        SupportProcessDTO supportProcessDTO = (SupportProcessDTO) o;
+        MessageProcessDTO messageProcessDTO = (MessageProcessDTO) o;
         if (this.id == null) {
             return false;
         }
-        return Objects.equals(this.id, supportProcessDTO.id);
+        return Objects.equals(this.id, messageProcessDTO.id);
     }
 
     @Override
@@ -64,10 +63,10 @@ public class SupportProcessDTO implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "SupportProcessDTO{" +
+        return "MessageProcessDTO{" +
             "id=" + getId() +
             ", processInstance=" + getProcessInstance() +
-            ", support=" + getSupport() +
+            ", message=" + getMessage() +
             "}";
     }
 }

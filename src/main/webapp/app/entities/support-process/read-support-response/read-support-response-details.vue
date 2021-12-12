@@ -86,7 +86,7 @@
             <div class="form-group">
               <label class="form-control-label">Message History</label>
               <ul>
-                <li v-for="(message, index) in taskContext.supportProcess.support" :key="index">{{ message }}</li>
+                <li v-for="(message, index) in taskContext.supportProcess.support.messageList" :key="index">{{ message.value }}</li>
               </ul>
             </div>
 

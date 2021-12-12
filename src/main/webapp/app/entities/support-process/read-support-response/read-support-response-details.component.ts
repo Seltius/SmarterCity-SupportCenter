@@ -19,6 +19,7 @@ export default class ReadSupportResponseDetailsComponent extends Vue {
   public retrieveContext(taskInstanceId) {
     this.readSupportResponseService.loadContext(taskInstanceId).then(res => {
       this.taskContext = res;
+      console.log(res);
     });
   }
 

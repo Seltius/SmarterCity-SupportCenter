@@ -1,0 +1,27 @@
+{
+  "smarterCitySupportCenterApp": {
+    "messageProcess": {
+      "home": {
+        "title": "Message Processes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Message Process",
+        "createOrEditLabel": "Create or edit a Message Process",
+        "notFound": "No Message Processes found"
+      },
+      "created": "A new Message Process is created with identifier {{ param }}",
+      "updated": "A Message Process is updated with identifier {{ param }}",
+      "deleted": "A Message Process is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Message Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Message Process"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "date": "Date",
+      "messageType": "Message Type",
+      "value": "Value"
+    }
+  }
+}

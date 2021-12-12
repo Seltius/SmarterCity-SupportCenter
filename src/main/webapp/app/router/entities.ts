@@ -36,6 +36,14 @@ const SupportProcess_ProvideSupportResponseExecute = () => import('@/entities/su
 const SupportProcess_ReadSupportResponseDetails = () => import('@/entities/support-process/read-support-response/read-support-response-details.vue');
 // prettier-ignore
 const SupportProcess_ReadSupportResponseExecute = () => import('@/entities/support-process/read-support-response/read-support-response-execute.vue');
+// prettier-ignore
+const Message = () => import('@/entities/message/message.vue');
+// prettier-ignore
+const MessageDetails = () => import('@/entities/message/message-details.vue');
+// prettier-ignore
+const MessageProcessDetails = () => import('@/entities/message-process/message-process-details.vue');
+// prettier-ignore
+const MessageProcessList = () => import('@/entities/message-process/message-process-list.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -139,6 +147,30 @@ export default [
     path: '/process-definition/SupportProcess/task/ReadSupportResponse/:taskInstanceId/execute',
     name: 'SupportProcess_ReadSupportResponseExecute',
     component: SupportProcess_ReadSupportResponseExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/message',
+    name: 'Message',
+    component: Message,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/message/:messageId/view',
+    name: 'MessageView',
+    component: MessageDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/MessageProcess/instance/:processInstanceId/view',
+    name: 'MessageProcessView',
+    component: MessageProcessDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/MessageProcess/instances',
+    name: 'MessageProcessList',
+    component: MessageProcessList,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

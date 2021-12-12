@@ -52,6 +52,6 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en"],
-    "entities": ["Refund", "Support"]
+    "entities": ["Refund", "Support", "Message"]
   }
 }

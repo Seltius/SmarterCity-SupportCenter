@@ -1,12 +1,17 @@
 package pt.iscte.smartercity.supportcenter.process.supportProcess;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.akip.repository.TaskInstanceRepository;
 import org.akip.service.TaskInstanceService;
 import org.akip.service.dto.TaskInstanceDTO;
 import org.akip.service.mapper.TaskInstanceMapper;
 import org.springframework.stereotype.Component;
+import pt.iscte.smartercity.supportcenter.domain.Message;
+import pt.iscte.smartercity.supportcenter.repository.MessageRepository;
 import pt.iscte.smartercity.supportcenter.repository.SupportProcessRepository;
 import pt.iscte.smartercity.supportcenter.service.SupportService;
+import pt.iscte.smartercity.supportcenter.service.dto.MessageDTO;
 import pt.iscte.smartercity.supportcenter.service.dto.SupportDTO;
 import pt.iscte.smartercity.supportcenter.service.dto.SupportProcessDTO;
 import pt.iscte.smartercity.supportcenter.service.mapper.SupportProcessMapper;
@@ -28,6 +33,8 @@ public class ProvideSupportResponseService {
 
     private final SupportProcessMapper supportProcessMapper;
 
+    private final MessageRepository messageRepository;
+
     public ProvideSupportResponseService(
         TaskInstanceService taskInstanceService,
         SupportService supportService,
@@ -35,7 +42,8 @@ public class ProvideSupportResponseService {
         SupportProcessRepository supportProcessRepository,
         TaskInstanceMapper taskInstanceMapper,
         ProvideSupportResponseMapper provideSupportResponseMapper,
-        SupportProcessMapper supportProcessMapper
+        SupportProcessMapper supportProcessMapper,
+        MessageRepository messageRepository
     ) {
         this.taskInstanceService = taskInstanceService;
         this.supportService = supportService;
@@ -44,6 +52,7 @@ public class ProvideSupportResponseService {
         this.taskInstanceMapper = taskInstanceMapper;
         this.provideSupportResponseMapper = provideSupportResponseMapper;
         this.supportProcessMapper = supportProcessMapper;
+        this.messageRepository = messageRepository;
     }
 
     public ProvideSupportResponseContextDTO loadContext(Long taskInstanceId) {
@@ -56,6 +65,21 @@ public class ProvideSupportResponseService {
             .findByProcessInstanceId(taskInstanceDTO.getProcessInstance().getId())
             .map(provideSupportResponseMapper::toSupportProcessDTO)
             .orElseThrow();
+
+        // GET ALL HISTORIC MESSAGES TODO USE MAPSTRUCT TO CONVERT DATA
+        List<MessageDTO> messageList = new ArrayList<>();
+        List<Message> messageEntityList = messageRepository.findAllBySupportId(supportProcess.getSupport().getSupportId());
+
+        for (Message message : messageEntityList) {
+            MessageDTO finalMessage = new MessageDTO();
+
+            finalMessage.setValue(message.getValue());
+            finalMessage.setMessageType(message.getMessageType());
+            finalMessage.setDate(message.getDate());
+
+            messageList.add(finalMessage);
+        }
+        supportProcess.getSupport().setMessageList(messageList);
 
         ProvideSupportResponseContextDTO provideSupportResponseContext = new ProvideSupportResponseContextDTO();
         provideSupportResponseContext.setTaskInstance(taskInstanceDTO);

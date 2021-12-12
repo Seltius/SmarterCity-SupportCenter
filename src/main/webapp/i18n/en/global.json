@@ -21,6 +21,8 @@
         "analyseSupportRequest": "Analyse Support Request",
         "provideSupportResponse": "Provide Support Response",
         "readSupportResponse": "Read Support Response",
+        "message": "Message",
+        "messageProcess": "Message Process",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -35,6 +35,8 @@ import RefundService from '@/entities/refund/refund.service';
 import SupportService from '@/entities/support/support.service';
 import SupportProcessService from '@/entities/support-process/support-process.service';
 import RefundProcessService from '@/entities/refund-process/refund-process.service';
+import MessageService from '@/entities/message/message.service';
+import MessageProcessService from '@/entities/message-process/message-process.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -102,6 +104,8 @@ new Vue({
     supportService: () => new SupportService(),
     supportProcessService: () => new SupportProcessService(),
     refundProcessService: () => new RefundProcessService(),
+    messageService: () => new MessageService(),
+    messageProcessService: () => new MessageProcessService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

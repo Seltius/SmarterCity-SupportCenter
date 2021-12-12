@@ -52,6 +52,8 @@ public class CacheConfiguration {
             createCache(cm, pt.iscte.smartercity.supportcenter.domain.Support.class.getName());
             createCache(cm, pt.iscte.smartercity.supportcenter.domain.SupportProcess.class.getName());
             createCache(cm, pt.iscte.smartercity.supportcenter.domain.RefundProcess.class.getName());
+            createCache(cm, pt.iscte.smartercity.supportcenter.domain.Message.class.getName());
+            createCache(cm, pt.iscte.smartercity.supportcenter.domain.MessageProcess.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

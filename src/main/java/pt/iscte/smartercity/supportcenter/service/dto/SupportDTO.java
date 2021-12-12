@@ -2,6 +2,7 @@ package pt.iscte.smartercity.supportcenter.service.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -34,6 +35,16 @@ public class SupportDTO implements Serializable {
     private String status;
 
     private String supportMessage;
+
+    private List<MessageDTO> messageList;
+
+    public List<MessageDTO> getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(List<MessageDTO> messageList) {
+        this.messageList = messageList;
+    }
 
     public Long getId() {
         return id;
