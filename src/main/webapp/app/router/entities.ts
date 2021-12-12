@@ -32,6 +32,10 @@ const SupportProcess_AnalyseSupportRequestExecute = () => import('@/entities/sup
 const SupportProcess_ProvideSupportResponseDetails = () => import('@/entities/support-process/provide-support-response/provide-support-response-details.vue');
 // prettier-ignore
 const SupportProcess_ProvideSupportResponseExecute = () => import('@/entities/support-process/provide-support-response/provide-support-response-execute.vue');
+// prettier-ignore
+const SupportProcess_ReadSupportResponseDetails = () => import('@/entities/support-process/read-support-response/read-support-response-details.vue');
+// prettier-ignore
+const SupportProcess_ReadSupportResponseExecute = () => import('@/entities/support-process/read-support-response/read-support-response-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -123,6 +127,18 @@ export default [
     path: '/process-definition/SupportProcess/task/ProvideSupportResponse/:taskInstanceId/execute',
     name: 'SupportProcess_ProvideSupportResponseExecute',
     component: SupportProcess_ProvideSupportResponseExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/SupportProcess/task/ReadSupportResponse/:taskInstanceId/view',
+    name: 'SupportProcess_ReadSupportResponseDetails',
+    component: SupportProcess_ReadSupportResponseDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/SupportProcess/task/ReadSupportResponse/:taskInstanceId/execute',
+    name: 'SupportProcess_ReadSupportResponseExecute',
+    component: SupportProcess_ReadSupportResponseExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

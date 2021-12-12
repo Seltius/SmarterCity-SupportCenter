@@ -27,14 +27,19 @@
     },
     {
       "fieldName": "supportMessage",
-      "fieldType": "String"
+      "fieldType": "String",
+      "fieldReadOnly": true
+    },
+    {
+      "fieldName": "isResolved",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [],
   "entityType": "user-task-form",
   "processBpmnId": "SupportProcess",
   "processEntityName": "SupportProcess",
-  "taskBpmnId": "ProvideSupportResponse",
+  "taskBpmnId": "ReadSupportResponse",
   "domainEntityName": "Support",
   "service": "serviceClass",
   "dto": "mapstruct",
@@ -42,6 +47,6 @@
   "readOnly": false,
   "pagination": "no",
   "skipFakeData": true,
-  "name": "ProvideSupportResponse",
+  "name": "ReadSupportResponse",
   "changelogDate": "20211210162446"
 }

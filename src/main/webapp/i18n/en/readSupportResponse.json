@@ -1,0 +1,30 @@
+{
+  "smarterCitySupportCenterApp": {
+    "readSupportResponse": {
+      "home": {
+        "title": "Read Support Responses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Read Support Response",
+        "createOrEditLabel": "Create or edit a Read Support Response",
+        "notFound": "No Read Support Responses found"
+      },
+      "created": "A new Read Support Response is created with identifier {{ param }}",
+      "updated": "A Read Support Response is updated with identifier {{ param }}",
+      "deleted": "A Read Support Response is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Read Support Response {{ id }}?"
+      },
+      "detail": {
+        "title": "Read Support Response"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "startDate": "Start Date",
+      "userName": "User Name",
+      "email": "Email",
+      "message": "Message",
+      "supportMessage": "Support Message",
+      "isResolved": "Is Resolved"
+    }
+  }
+}
