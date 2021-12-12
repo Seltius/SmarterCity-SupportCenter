@@ -72,10 +72,10 @@ public class AnalyseSupportRequestService {
     public void save(AnalyseSupportRequestContextDTO analyseSupportRequestContext) {
         SupportDTO supportDTO = supportService.findOne(analyseSupportRequestContext.getSupportProcess().getSupport().getId()).orElseThrow();
         supportDTO.setSupportId(analyseSupportRequestContext.getSupportProcess().getSupport().getSupportId());
-        supportDTO.setStartDate(analyseSupportRequestContext.getSupportProcess().getSupport().getStartDate());
-        supportDTO.setUserName(analyseSupportRequestContext.getSupportProcess().getSupport().getUserName());
+        supportDTO.setCreateDate(analyseSupportRequestContext.getSupportProcess().getSupport().getCreateDate());
+        supportDTO.setName(analyseSupportRequestContext.getSupportProcess().getSupport().getName());
         supportDTO.setEmail(analyseSupportRequestContext.getSupportProcess().getSupport().getEmail());
-        supportDTO.setMessage(analyseSupportRequestContext.getSupportProcess().getSupport().getMessage());
+        supportDTO.setIssue(analyseSupportRequestContext.getSupportProcess().getSupport().getIssue());
         supportDTO.setIsRefund(analyseSupportRequestContext.getSupportProcess().getSupport().getIsRefund());
         supportService.save(supportDTO);
     }

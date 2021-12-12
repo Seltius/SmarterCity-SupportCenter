@@ -11,21 +11,21 @@
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.userName')"
-                for="fill-support-request-userName"
-                >User Name</label
+                v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.name')"
+                for="fill-support-request-name"
+                >Name</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="userName"
-                id="fill-support-request-userName"
-                data-cy="userName"
+                name="name"
+                id="fill-support-request-name"
+                data-cy="name"
                 :class="{
-                  valid: !$v.taskContext.supportProcess.support.userName.$invalid,
-                  invalid: $v.taskContext.supportProcess.support.userName.$invalid,
+                  valid: !$v.taskContext.supportProcess.support.name.$invalid,
+                  invalid: $v.taskContext.supportProcess.support.name.$invalid,
                 }"
-                v-model="$v.taskContext.supportProcess.support.userName.$model"
+                v-model="$v.taskContext.supportProcess.support.name.$model"
               />
             </div>
             <div class="form-group">
@@ -51,21 +51,21 @@
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.message')"
-                for="fill-support-request-message"
-                >Message</label
+                v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.issue')"
+                for="fill-support-request-issue"
+                >Issue</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="message"
-                id="fill-support-request-message"
-                data-cy="message"
+                name="issue"
+                id="fill-support-request-issue"
+                data-cy="issue"
                 :class="{
-                  valid: !$v.taskContext.supportProcess.support.message.$invalid,
-                  invalid: $v.taskContext.supportProcess.support.message.$invalid,
+                  valid: !$v.taskContext.supportProcess.support.issue.$invalid,
+                  invalid: $v.taskContext.supportProcess.support.issue.$invalid,
                 }"
-                v-model="$v.taskContext.supportProcess.support.message.$model"
+                v-model="$v.taskContext.supportProcess.support.issue.$model"
               />
             </div>
           </template>

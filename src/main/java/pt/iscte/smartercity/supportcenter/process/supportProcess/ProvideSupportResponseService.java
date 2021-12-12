@@ -98,11 +98,11 @@ public class ProvideSupportResponseService {
             .findOne(provideSupportResponseContext.getSupportProcess().getSupport().getId())
             .orElseThrow();
         supportDTO.setSupportId(provideSupportResponseContext.getSupportProcess().getSupport().getSupportId());
-        supportDTO.setStartDate(provideSupportResponseContext.getSupportProcess().getSupport().getStartDate());
-        supportDTO.setUserName(provideSupportResponseContext.getSupportProcess().getSupport().getUserName());
+        supportDTO.setCreateDate(provideSupportResponseContext.getSupportProcess().getSupport().getCreateDate());
+        supportDTO.setName(provideSupportResponseContext.getSupportProcess().getSupport().getName());
         supportDTO.setEmail(provideSupportResponseContext.getSupportProcess().getSupport().getEmail());
-        supportDTO.setMessage(provideSupportResponseContext.getSupportProcess().getSupport().getMessage());
-        supportDTO.setSupportMessage(provideSupportResponseContext.getSupportProcess().getSupport().getSupportMessage());
+        supportDTO.setIssue(provideSupportResponseContext.getSupportProcess().getSupport().getIssue());
+        supportDTO.setSupportReply(provideSupportResponseContext.getSupportProcess().getSupport().getSupportReply());
         supportService.save(supportDTO);
     }
 

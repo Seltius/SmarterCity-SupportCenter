@@ -13,10 +13,10 @@
             <span>{{ support.supportId }}</span>
           </dd>
           <dt>
-            <span v-text="$t('smarterCitySupportCenterApp.support.startDate')">Start Date</span>
+            <span v-text="$t('smarterCitySupportCenterApp.support.createDate')">Create Date</span>
           </dt>
           <dd>
-            <span>{{ support.startDate }}</span>
+            <span>{{ support.createDate }}</span>
           </dd>
           <dt>
             <span v-text="$t('smarterCitySupportCenterApp.support.endDate')">End Date</span>
@@ -25,10 +25,10 @@
             <span>{{ support.endDate }}</span>
           </dd>
           <dt>
-            <span v-text="$t('smarterCitySupportCenterApp.support.userName')">User Name</span>
+            <span v-text="$t('smarterCitySupportCenterApp.support.name')">Name</span>
           </dt>
           <dd>
-            <span>{{ support.userName }}</span>
+            <span>{{ support.name }}</span>
           </dd>
           <dt>
             <span v-text="$t('smarterCitySupportCenterApp.support.email')">Email</span>
@@ -37,10 +37,10 @@
             <span>{{ support.email }}</span>
           </dd>
           <dt>
-            <span v-text="$t('smarterCitySupportCenterApp.support.message')">Message</span>
+            <span v-text="$t('smarterCitySupportCenterApp.support.issue')">Issue</span>
           </dt>
           <dd>
-            <span>{{ support.message }}</span>
+            <span>{{ support.issue }}</span>
           </dd>
           <dt>
             <span v-text="$t('smarterCitySupportCenterApp.support.isRefund')">Is Refund</span>
@@ -73,10 +73,16 @@
             <span>{{ support.status }}</span>
           </dd>
           <dt>
-            <span v-text="$t('smarterCitySupportCenterApp.support.supportMessage')">Support Message</span>
+            <span v-text="$t('smarterCitySupportCenterApp.support.userReply')">User Reply</span>
           </dt>
           <dd>
-            <span>{{ support.supportMessage }}</span>
+            <span>{{ support.userReply }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('smarterCitySupportCenterApp.support.supportReply')">Support Reply</span>
+          </dt>
+          <dd>
+            <span>{{ support.supportReply }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

@@ -5,7 +5,7 @@
       "fieldType": "Integer"
     },
     {
-      "fieldName": "startDate",
+      "fieldName": "createDate",
       "fieldType": "LocalDate"
     },
     {
@@ -13,7 +13,7 @@
       "fieldType": "LocalDate"
     },
     {
-      "fieldName": "userName",
+      "fieldName": "name",
       "fieldType": "String"
     },
     {
@@ -21,7 +21,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "message",
+      "fieldName": "issue",
       "fieldType": "String"
     },
     {
@@ -45,7 +45,11 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "supportMessage",
+      "fieldName": "userReply",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supportReply",
       "fieldType": "String"
     }
   ],

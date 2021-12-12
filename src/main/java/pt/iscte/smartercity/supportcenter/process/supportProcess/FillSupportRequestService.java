@@ -71,9 +71,9 @@ public class FillSupportRequestService {
 
     public void save(FillSupportRequestContextDTO fillSupportRequestContext) {
         SupportDTO supportDTO = supportService.findOne(fillSupportRequestContext.getSupportProcess().getSupport().getId()).orElseThrow();
-        supportDTO.setUserName(fillSupportRequestContext.getSupportProcess().getSupport().getUserName());
+        supportDTO.setName(fillSupportRequestContext.getSupportProcess().getSupport().getName());
         supportDTO.setEmail(fillSupportRequestContext.getSupportProcess().getSupport().getEmail());
-        supportDTO.setMessage(fillSupportRequestContext.getSupportProcess().getSupport().getMessage());
+        supportDTO.setIssue(fillSupportRequestContext.getSupportProcess().getSupport().getIssue());
         supportService.save(supportDTO);
     }
 

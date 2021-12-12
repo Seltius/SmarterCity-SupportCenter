@@ -46,6 +46,7 @@ describe('Service Tests', () => {
         0,
         false,
         'AAAAAAA',
+        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -54,7 +55,7 @@ describe('Service Tests', () => {
       it('should find an element', async () => {
         const returnedFromService = Object.assign(
           {
-            startDate: dayjs(currentDate).format(DATE_FORMAT),
+            createDate: dayjs(currentDate).format(DATE_FORMAT),
             endDate: dayjs(currentDate).format(DATE_FORMAT),
           },
           elemDefault
@@ -80,23 +81,24 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             supportId: 1,
-            startDate: dayjs(currentDate).format(DATE_FORMAT),
+            createDate: dayjs(currentDate).format(DATE_FORMAT),
             endDate: dayjs(currentDate).format(DATE_FORMAT),
-            userName: 'BBBBBB',
+            name: 'BBBBBB',
             email: 'BBBBBB',
-            message: 'BBBBBB',
+            issue: 'BBBBBB',
             isRefund: true,
             isValid: true,
             refundId: 1,
             isResolved: true,
             status: 'BBBBBB',
-            supportMessage: 'BBBBBB',
+            userReply: 'BBBBBB',
+            supportReply: 'BBBBBB',
           },
           elemDefault
         );
         const expected = Object.assign(
           {
-            startDate: currentDate,
+            createDate: currentDate,
             endDate: currentDate,
           },
           returnedFromService

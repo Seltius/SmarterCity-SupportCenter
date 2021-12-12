@@ -19,17 +19,18 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.supportId')">Support Id</span></th>
-            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.startDate')">Start Date</span></th>
+            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.createDate')">Create Date</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.endDate')">End Date</span></th>
-            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.userName')">User Name</span></th>
+            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.name')">Name</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.email')">Email</span></th>
-            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.message')">Message</span></th>
+            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.issue')">Issue</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.isRefund')">Is Refund</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.isValid')">Is Valid</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.refundId')">Refund Id</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.isResolved')">Is Resolved</span></th>
             <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.status')">Status</span></th>
-            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.supportMessage')">Support Message</span></th>
+            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.userReply')">User Reply</span></th>
+            <th scope="row"><span v-text="$t('smarterCitySupportCenterApp.support.supportReply')">Support Reply</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -39,17 +40,18 @@
               <router-link :to="{ name: 'SupportView', params: { supportId: support.id } }">{{ support.id }}</router-link>
             </td>
             <td>{{ support.supportId }}</td>
-            <td>{{ support.startDate }}</td>
+            <td>{{ support.createDate }}</td>
             <td>{{ support.endDate }}</td>
-            <td>{{ support.userName }}</td>
+            <td>{{ support.name }}</td>
             <td>{{ support.email }}</td>
-            <td>{{ support.message }}</td>
+            <td>{{ support.issue }}</td>
             <td>{{ support.isRefund }}</td>
             <td>{{ support.isValid }}</td>
             <td>{{ support.refundId }}</td>
             <td>{{ support.isResolved }}</td>
             <td>{{ support.status }}</td>
-            <td>{{ support.supportMessage }}</td>
+            <td>{{ support.userReply }}</td>
+            <td>{{ support.supportReply }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'SupportView', params: { supportId: support.id } }" custom v-slot="{ navigate }">

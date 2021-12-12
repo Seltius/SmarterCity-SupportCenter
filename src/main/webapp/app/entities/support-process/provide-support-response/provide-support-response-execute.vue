@@ -32,45 +32,45 @@
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.startDate')"
-                for="provide-support-response-startDate"
-                >Start Date</label
+                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.createDate')"
+                for="provide-support-response-createDate"
+                >Create Date</label
               >
               <b-input-group class="mb-3">
                 <b-form-input
-                  id="provide-support-response-startDate"
+                  id="provide-support-response-createDate"
                   readonly
-                  data-cy="startDate"
+                  data-cy="createDate"
                   type="text"
                   class="form-control"
-                  name="startDate"
+                  name="createDate"
                   :class="{
-                    valid: !$v.taskContext.supportProcess.support.startDate.$invalid,
-                    invalid: $v.taskContext.supportProcess.support.startDate.$invalid,
+                    valid: !$v.taskContext.supportProcess.support.createDate.$invalid,
+                    invalid: $v.taskContext.supportProcess.support.createDate.$invalid,
                   }"
-                  v-model="$v.taskContext.supportProcess.support.startDate.$model"
+                  v-model="$v.taskContext.supportProcess.support.createDate.$model"
                 />
               </b-input-group>
             </div>
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.userName')"
-                for="provide-support-response-userName"
-                >User Name</label
+                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.name')"
+                for="provide-support-response-name"
+                >Name</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="userName"
-                id="provide-support-response-userName"
+                name="name"
+                id="provide-support-response-name"
                 readonly
-                data-cy="userName"
+                data-cy="name"
                 :class="{
-                  valid: !$v.taskContext.supportProcess.support.userName.$invalid,
-                  invalid: $v.taskContext.supportProcess.support.userName.$invalid,
+                  valid: !$v.taskContext.supportProcess.support.name.$invalid,
+                  invalid: $v.taskContext.supportProcess.support.name.$invalid,
                 }"
-                v-model="$v.taskContext.supportProcess.support.userName.$model"
+                v-model="$v.taskContext.supportProcess.support.name.$model"
               />
             </div>
             <div class="form-group">
@@ -97,42 +97,42 @@
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.message')"
-                for="provide-support-response-message"
-                >Message</label
+                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.issue')"
+                for="provide-support-response-issue"
+                >Issue</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="message"
-                id="provide-support-response-message"
+                name="issue"
+                id="provide-support-response-issue"
                 readonly
-                data-cy="message"
+                data-cy="issue"
                 :class="{
-                  valid: !$v.taskContext.supportProcess.support.message.$invalid,
-                  invalid: $v.taskContext.supportProcess.support.message.$invalid,
+                  valid: !$v.taskContext.supportProcess.support.issue.$invalid,
+                  invalid: $v.taskContext.supportProcess.support.issue.$invalid,
                 }"
-                v-model="$v.taskContext.supportProcess.support.message.$model"
+                v-model="$v.taskContext.supportProcess.support.issue.$model"
               />
             </div>
             <div class="form-group">
               <label
                 class="form-control-label"
-                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.supportMessage')"
-                for="provide-support-response-supportMessage"
-                >Support Message</label
+                v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.supportReply')"
+                for="provide-support-response-supportReply"
+                >Support Reply</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="supportMessage"
-                id="provide-support-response-supportMessage"
-                data-cy="supportMessage"
+                name="supportReply"
+                id="provide-support-response-supportReply"
+                data-cy="supportReply"
                 :class="{
-                  valid: !$v.taskContext.supportProcess.support.supportMessage.$invalid,
-                  invalid: $v.taskContext.supportProcess.support.supportMessage.$invalid,
+                  valid: !$v.taskContext.supportProcess.support.supportReply.$invalid,
+                  invalid: $v.taskContext.supportProcess.support.supportReply.$invalid,
                 }"
-                v-model="$v.taskContext.supportProcess.support.supportMessage.$model"
+                v-model="$v.taskContext.supportProcess.support.supportReply.$model"
               />
             </div>
           </template>

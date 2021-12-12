@@ -6,12 +6,12 @@
       "fieldReadOnly": true
     },
     {
-      "fieldName": "startDate",
+      "fieldName": "createDate",
       "fieldType": "LocalDate",
       "fieldReadOnly": true
     },
     {
-      "fieldName": "userName",
+      "fieldName": "name",
       "fieldType": "String",
       "fieldReadOnly": true
     },
@@ -21,12 +21,12 @@
       "fieldReadOnly": true
     },
     {
-      "fieldName": "message",
+      "fieldName": "issue",
       "fieldType": "String",
       "fieldReadOnly": true
     },
     {
-      "fieldName": "supportMessage",
+      "fieldName": "supportReply",
       "fieldType": "String"
     }
   ],

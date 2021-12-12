@@ -16,8 +16,8 @@ public interface FillSupportRequestMapper {
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "userName", source = "userName")
+    @Mapping(target = "name", source = "name")
     @Mapping(target = "email", source = "email")
-    @Mapping(target = "message", source = "message")
+    @Mapping(target = "issue", source = "issue")
     SupportDTO toSupportDTO(Support support);
 }

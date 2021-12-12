@@ -11,17 +11,18 @@
       },
       "id": "ID",
       "supportId": "Support Id",
-      "startDate": "Start Date",
+      "createDate": "Create Date",
       "endDate": "End Date",
-      "userName": "User Name",
+      "name": "Name",
       "email": "Email",
-      "message": "Message",
+      "issue": "Issue",
       "isRefund": "Is Refund",
       "isValid": "Is Valid",
       "refundId": "Refund Id",
       "isResolved": "Is Resolved",
       "status": "Status",
-      "supportMessage": "Support Message"
+      "userReply": "User Reply",
+      "supportReply": "Support Reply"
     }
   }
 }

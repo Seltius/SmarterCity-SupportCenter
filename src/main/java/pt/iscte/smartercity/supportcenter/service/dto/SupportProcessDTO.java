@@ -1,7 +1,6 @@
 package pt.iscte.smartercity.supportcenter.service.dto;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 import org.akip.service.dto.ProcessInstanceDTO;
 

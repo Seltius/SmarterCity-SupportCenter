@@ -8,10 +8,10 @@ const validations: any = {
     supportProcess: {
       support: {
         supportId: {},
-        startDate: {},
-        userName: {},
+        createDate: {},
+        name: {},
         email: {},
-        message: {},
+        issue: {},
         isRefund: {},
       },
     },

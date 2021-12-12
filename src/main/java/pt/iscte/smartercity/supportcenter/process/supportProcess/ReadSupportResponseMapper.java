@@ -17,11 +17,9 @@ public interface ReadSupportResponseMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "supportId", source = "supportId")
-    @Mapping(target = "startDate", source = "startDate")
-    @Mapping(target = "userName", source = "userName")
-    @Mapping(target = "email", source = "email")
-    @Mapping(target = "message", source = "message")
-    @Mapping(target = "supportMessage", source = "supportMessage")
+    @Mapping(target = "createDate", source = "createDate")
+    @Mapping(target = "issue", source = "issue")
+    @Mapping(target = "userReply", source = "userReply")
     @Mapping(target = "isResolved", source = "isResolved")
     SupportDTO toSupportDTO(Support support);
 }

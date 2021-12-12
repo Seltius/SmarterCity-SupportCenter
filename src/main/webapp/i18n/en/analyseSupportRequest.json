@@ -19,10 +19,10 @@
       },
       "id": "ID",
       "supportId": "Support Id",
-      "startDate": "Start Date",
-      "userName": "User Name",
+      "createDate": "Create Date",
+      "name": "Name",
       "email": "Email",
-      "message": "Message",
+      "issue": "Issue",
       "isRefund": "Is Refund"
     }
   }

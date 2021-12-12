@@ -19,11 +19,11 @@
       },
       "id": "ID",
       "supportId": "Support Id",
-      "startDate": "Start Date",
-      "userName": "User Name",
+      "createDate": "Create Date",
+      "name": "Name",
       "email": "Email",
-      "message": "Message",
-      "supportMessage": "Support Message"
+      "issue": "Issue",
+      "supportReply": "Support Reply"
     }
   }
 }

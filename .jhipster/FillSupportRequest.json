@@ -1,7 +1,7 @@
 {
   "fields": [
     {
-      "fieldName": "userName",
+      "fieldName": "name",
       "fieldType": "String"
     },
     {
@@ -9,7 +9,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "message",
+      "fieldName": "issue",
       "fieldType": "String"
     }
   ],

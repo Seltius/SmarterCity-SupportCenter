@@ -36,20 +36,20 @@ class SupportResourceIT {
     private static final Integer DEFAULT_SUPPORT_ID = 1;
     private static final Integer UPDATED_SUPPORT_ID = 2;
 
-    private static final LocalDate DEFAULT_START_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_START_DATE = LocalDate.now(ZoneId.systemDefault());
+    private static final LocalDate DEFAULT_CREATE_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_CREATE_DATE = LocalDate.now(ZoneId.systemDefault());
 
     private static final LocalDate DEFAULT_END_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_END_DATE = LocalDate.now(ZoneId.systemDefault());
 
-    private static final String DEFAULT_USER_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_USER_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_NAME = "BBBBBBBBBB";
 
     private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
     private static final String UPDATED_EMAIL = "BBBBBBBBBB";
 
-    private static final String DEFAULT_MESSAGE = "AAAAAAAAAA";
-    private static final String UPDATED_MESSAGE = "BBBBBBBBBB";
+    private static final String DEFAULT_ISSUE = "AAAAAAAAAA";
+    private static final String UPDATED_ISSUE = "BBBBBBBBBB";
 
     private static final Boolean DEFAULT_IS_REFUND = false;
     private static final Boolean UPDATED_IS_REFUND = true;
@@ -66,8 +66,11 @@ class SupportResourceIT {
     private static final String DEFAULT_STATUS = "AAAAAAAAAA";
     private static final String UPDATED_STATUS = "BBBBBBBBBB";
 
-    private static final String DEFAULT_SUPPORT_MESSAGE = "AAAAAAAAAA";
-    private static final String UPDATED_SUPPORT_MESSAGE = "BBBBBBBBBB";
+    private static final String DEFAULT_USER_REPLY = "AAAAAAAAAA";
+    private static final String UPDATED_USER_REPLY = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUPPORT_REPLY = "AAAAAAAAAA";
+    private static final String UPDATED_SUPPORT_REPLY = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/supports";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -98,17 +101,18 @@ class SupportResourceIT {
     public static Support createEntity(EntityManager em) {
         Support support = new Support()
             .supportId(DEFAULT_SUPPORT_ID)
-            .startDate(DEFAULT_START_DATE)
+            .createDate(DEFAULT_CREATE_DATE)
             .endDate(DEFAULT_END_DATE)
-            .userName(DEFAULT_USER_NAME)
+            .name(DEFAULT_NAME)
             .email(DEFAULT_EMAIL)
-            .message(DEFAULT_MESSAGE)
+            .issue(DEFAULT_ISSUE)
             .isRefund(DEFAULT_IS_REFUND)
             .isValid(DEFAULT_IS_VALID)
             .refundId(DEFAULT_REFUND_ID)
             .isResolved(DEFAULT_IS_RESOLVED)
             .status(DEFAULT_STATUS)
-            .supportMessage(DEFAULT_SUPPORT_MESSAGE);
+            .userReply(DEFAULT_USER_REPLY)
+            .supportReply(DEFAULT_SUPPORT_REPLY);
         return support;
     }
 
@@ -121,17 +125,18 @@ class SupportResourceIT {
     public static Support createUpdatedEntity(EntityManager em) {
         Support support = new Support()
             .supportId(UPDATED_SUPPORT_ID)
-            .startDate(UPDATED_START_DATE)
+            .createDate(UPDATED_CREATE_DATE)
             .endDate(UPDATED_END_DATE)
-            .userName(UPDATED_USER_NAME)
+            .name(UPDATED_NAME)
             .email(UPDATED_EMAIL)
-            .message(UPDATED_MESSAGE)
+            .issue(UPDATED_ISSUE)
             .isRefund(UPDATED_IS_REFUND)
             .isValid(UPDATED_IS_VALID)
             .refundId(UPDATED_REFUND_ID)
             .isResolved(UPDATED_IS_RESOLVED)
             .status(UPDATED_STATUS)
-            .supportMessage(UPDATED_SUPPORT_MESSAGE);
+            .userReply(UPDATED_USER_REPLY)
+            .supportReply(UPDATED_SUPPORT_REPLY);
         return support;
     }
 
@@ -153,17 +158,18 @@ class SupportResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(support.getId().intValue())))
             .andExpect(jsonPath("$.[*].supportId").value(hasItem(DEFAULT_SUPPORT_ID)))
-            .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
+            .andExpect(jsonPath("$.[*].createDate").value(hasItem(DEFAULT_CREATE_DATE.toString())))
             .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())))
-            .andExpect(jsonPath("$.[*].userName").value(hasItem(DEFAULT_USER_NAME)))
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
-            .andExpect(jsonPath("$.[*].message").value(hasItem(DEFAULT_MESSAGE)))
+            .andExpect(jsonPath("$.[*].issue").value(hasItem(DEFAULT_ISSUE)))
             .andExpect(jsonPath("$.[*].isRefund").value(hasItem(DEFAULT_IS_REFUND.booleanValue())))
             .andExpect(jsonPath("$.[*].isValid").value(hasItem(DEFAULT_IS_VALID.booleanValue())))
             .andExpect(jsonPath("$.[*].refundId").value(hasItem(DEFAULT_REFUND_ID)))
             .andExpect(jsonPath("$.[*].isResolved").value(hasItem(DEFAULT_IS_RESOLVED.booleanValue())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS)))
-            .andExpect(jsonPath("$.[*].supportMessage").value(hasItem(DEFAULT_SUPPORT_MESSAGE)));
+            .andExpect(jsonPath("$.[*].userReply").value(hasItem(DEFAULT_USER_REPLY)))
+            .andExpect(jsonPath("$.[*].supportReply").value(hasItem(DEFAULT_SUPPORT_REPLY)));
     }
 
     @Test
@@ -179,17 +185,18 @@ class SupportResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(support.getId().intValue()))
             .andExpect(jsonPath("$.supportId").value(DEFAULT_SUPPORT_ID))
-            .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
+            .andExpect(jsonPath("$.createDate").value(DEFAULT_CREATE_DATE.toString()))
             .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE.toString()))
-            .andExpect(jsonPath("$.userName").value(DEFAULT_USER_NAME))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
-            .andExpect(jsonPath("$.message").value(DEFAULT_MESSAGE))
+            .andExpect(jsonPath("$.issue").value(DEFAULT_ISSUE))
             .andExpect(jsonPath("$.isRefund").value(DEFAULT_IS_REFUND.booleanValue()))
             .andExpect(jsonPath("$.isValid").value(DEFAULT_IS_VALID.booleanValue()))
             .andExpect(jsonPath("$.refundId").value(DEFAULT_REFUND_ID))
             .andExpect(jsonPath("$.isResolved").value(DEFAULT_IS_RESOLVED.booleanValue()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS))
-            .andExpect(jsonPath("$.supportMessage").value(DEFAULT_SUPPORT_MESSAGE));
+            .andExpect(jsonPath("$.userReply").value(DEFAULT_USER_REPLY))
+            .andExpect(jsonPath("$.supportReply").value(DEFAULT_SUPPORT_REPLY));
     }
 
     @Test

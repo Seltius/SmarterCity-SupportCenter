@@ -7,9 +7,9 @@ const validations: any = {
   taskContext: {
     supportProcess: {
       support: {
-        userName: {},
+        name: {},
         email: {},
-        message: {},
+        issue: {},
       },
     },
   },

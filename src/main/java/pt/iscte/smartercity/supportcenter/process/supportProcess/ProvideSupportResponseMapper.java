@@ -17,10 +17,10 @@ public interface ProvideSupportResponseMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
     @Mapping(target = "supportId", source = "supportId")
-    @Mapping(target = "startDate", source = "startDate")
-    @Mapping(target = "userName", source = "userName")
+    @Mapping(target = "createDate", source = "createDate")
+    @Mapping(target = "name", source = "name")
     @Mapping(target = "email", source = "email")
-    @Mapping(target = "message", source = "message")
-    @Mapping(target = "supportMessage", source = "supportMessage")
+    @Mapping(target = "issue", source = "issue")
+    @Mapping(target = "supportReply", source = "supportReply")
     SupportDTO toSupportDTO(Support support);
 }

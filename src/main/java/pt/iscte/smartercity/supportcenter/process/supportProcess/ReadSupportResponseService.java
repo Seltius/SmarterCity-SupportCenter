@@ -96,11 +96,9 @@ public class ReadSupportResponseService {
     public void save(ReadSupportResponseContextDTO readSupportResponseContext) {
         SupportDTO supportDTO = supportService.findOne(readSupportResponseContext.getSupportProcess().getSupport().getId()).orElseThrow();
         supportDTO.setSupportId(readSupportResponseContext.getSupportProcess().getSupport().getSupportId());
-        supportDTO.setStartDate(readSupportResponseContext.getSupportProcess().getSupport().getStartDate());
-        supportDTO.setUserName(readSupportResponseContext.getSupportProcess().getSupport().getUserName());
-        supportDTO.setEmail(readSupportResponseContext.getSupportProcess().getSupport().getEmail());
-        supportDTO.setMessage(readSupportResponseContext.getSupportProcess().getSupport().getMessage());
-        supportDTO.setSupportMessage(readSupportResponseContext.getSupportProcess().getSupport().getSupportMessage());
+        supportDTO.setCreateDate(readSupportResponseContext.getSupportProcess().getSupport().getCreateDate());
+        supportDTO.setIssue(readSupportResponseContext.getSupportProcess().getSupport().getIssue());
+        supportDTO.setUserReply(readSupportResponseContext.getSupportProcess().getSupport().getUserReply());
         supportDTO.setIsResolved(readSupportResponseContext.getSupportProcess().getSupport().getIsResolved());
         supportService.save(supportDTO);
     }

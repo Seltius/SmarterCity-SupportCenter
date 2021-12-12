@@ -24,20 +24,20 @@ public class Support implements Serializable {
     @Column(name = "support_id")
     private Integer supportId;
 
-    @Column(name = "start_date")
-    private LocalDate startDate;
+    @Column(name = "create_date")
+    private LocalDate createDate;
 
     @Column(name = "end_date")
     private LocalDate endDate;
 
-    @Column(name = "user_name")
-    private String userName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "message")
-    private String message;
+    @Column(name = "issue")
+    private String issue;
 
     @Column(name = "is_refund")
     private Boolean isRefund;
@@ -54,8 +54,11 @@ public class Support implements Serializable {
     @Column(name = "status")
     private String status;
 
-    @Column(name = "support_message")
-    private String supportMessage;
+    @Column(name = "user_reply")
+    private String userReply;
+
+    @Column(name = "support_reply")
+    private String supportReply;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -84,17 +87,17 @@ public class Support implements Serializable {
         this.supportId = supportId;
     }
 
-    public LocalDate getStartDate() {
-        return this.startDate;
+    public LocalDate getCreateDate() {
+        return this.createDate;
     }
 
-    public Support startDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public Support createDate(LocalDate createDate) {
+        this.createDate = createDate;
         return this;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
     }
 
     public LocalDate getEndDate() {
@@ -110,17 +113,17 @@ public class Support implements Serializable {
         this.endDate = endDate;
     }
 
-    public String getUserName() {
-        return this.userName;
+    public String getName() {
+        return this.name;
     }
 
-    public Support userName(String userName) {
-        this.userName = userName;
+    public Support name(String name) {
+        this.name = name;
         return this;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -136,17 +139,17 @@ public class Support implements Serializable {
         this.email = email;
     }
 
-    public String getMessage() {
-        return this.message;
+    public String getIssue() {
+        return this.issue;
     }
 
-    public Support message(String message) {
-        this.message = message;
+    public Support issue(String issue) {
+        this.issue = issue;
         return this;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setIssue(String issue) {
+        this.issue = issue;
     }
 
     public Boolean getIsRefund() {
@@ -214,17 +217,30 @@ public class Support implements Serializable {
         this.status = status;
     }
 
-    public String getSupportMessage() {
-        return this.supportMessage;
+    public String getUserReply() {
+        return this.userReply;
     }
 
-    public Support supportMessage(String supportMessage) {
-        this.supportMessage = supportMessage;
+    public Support userReply(String userReply) {
+        this.userReply = userReply;
         return this;
     }
 
-    public void setSupportMessage(String supportMessage) {
-        this.supportMessage = supportMessage;
+    public void setUserReply(String userReply) {
+        this.userReply = userReply;
+    }
+
+    public String getSupportReply() {
+        return this.supportReply;
+    }
+
+    public Support supportReply(String supportReply) {
+        this.supportReply = supportReply;
+        return this;
+    }
+
+    public void setSupportReply(String supportReply) {
+        this.supportReply = supportReply;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -252,17 +268,18 @@ public class Support implements Serializable {
         return "Support{" +
             "id=" + getId() +
             ", supportId=" + getSupportId() +
-            ", startDate='" + getStartDate() + "'" +
+            ", createDate='" + getCreateDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
-            ", userName='" + getUserName() + "'" +
+            ", name='" + getName() + "'" +
             ", email='" + getEmail() + "'" +
-            ", message='" + getMessage() + "'" +
+            ", issue='" + getIssue() + "'" +
             ", isRefund='" + getIsRefund() + "'" +
             ", isValid='" + getIsValid() + "'" +
             ", refundId=" + getRefundId() +
             ", isResolved='" + getIsResolved() + "'" +
             ", status='" + getStatus() + "'" +
-            ", supportMessage='" + getSupportMessage() + "'" +
+            ", userReply='" + getUserReply() + "'" +
+            ", supportReply='" + getSupportReply() + "'" +
             "}";
     }
 }

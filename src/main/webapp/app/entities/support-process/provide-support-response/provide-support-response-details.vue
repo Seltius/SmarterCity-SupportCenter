@@ -23,29 +23,29 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.startDate')"
-                >startDate</label
+              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.createDate')"
+                >createDate</label
               >
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="startDate"
-                id="support-startDate"
-                data-cy="startDate"
-                v-model="taskContext.supportProcess.support.startDate"
+                name="createDate"
+                id="support-createDate"
+                data-cy="createDate"
+                v-model="taskContext.supportProcess.support.createDate"
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.userName')">userName</label>
+              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.name')">name</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="userName"
-                id="support-userName"
-                data-cy="userName"
-                v-model="taskContext.supportProcess.support.userName"
+                name="name"
+                id="support-name"
+                data-cy="name"
+                v-model="taskContext.supportProcess.support.name"
               />
             </div>
             <div class="form-group">
@@ -61,29 +61,29 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.message')">message</label>
+              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.issue')">issue</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="message"
-                id="support-message"
-                data-cy="message"
-                v-model="taskContext.supportProcess.support.message"
+                name="issue"
+                id="support-issue"
+                data-cy="issue"
+                v-model="taskContext.supportProcess.support.issue"
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.supportMessage')"
-                >supportMessage</label
+              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.provideSupportResponse.supportReply')"
+                >supportReply</label
               >
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="supportMessage"
-                id="support-supportMessage"
-                data-cy="supportMessage"
-                v-model="taskContext.supportProcess.support.supportMessage"
+                name="supportReply"
+                id="support-supportReply"
+                data-cy="supportReply"
+                v-model="taskContext.supportProcess.support.supportReply"
               />
             </div>
           </template>

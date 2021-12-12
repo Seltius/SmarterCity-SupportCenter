@@ -14,15 +14,15 @@ public class SupportDTO implements Serializable {
 
     private Integer supportId;
 
-    private LocalDate startDate;
+    private LocalDate createDate;
 
     private LocalDate endDate;
 
-    private String userName;
+    private String name;
 
     private String email;
 
-    private String message;
+    private String issue;
 
     private Boolean isRefund;
 
@@ -34,9 +34,11 @@ public class SupportDTO implements Serializable {
 
     private String status;
 
-    private String supportMessage;
+    private String userReply;
 
     private List<MessageDTO> messageList;
+
+    private String supportReply;
 
     public List<MessageDTO> getMessageList() {
         return messageList;
@@ -62,12 +64,12 @@ public class SupportDTO implements Serializable {
         this.supportId = supportId;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getCreateDate() {
+        return createDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
     }
 
     public LocalDate getEndDate() {
@@ -78,12 +80,12 @@ public class SupportDTO implements Serializable {
         this.endDate = endDate;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -94,12 +96,12 @@ public class SupportDTO implements Serializable {
         this.email = email;
     }
 
-    public String getMessage() {
-        return message;
+    public String getIssue() {
+        return issue;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setIssue(String issue) {
+        this.issue = issue;
     }
 
     public Boolean getIsRefund() {
@@ -142,12 +144,20 @@ public class SupportDTO implements Serializable {
         this.status = status;
     }
 
-    public String getSupportMessage() {
-        return supportMessage;
+    public String getUserReply() {
+        return userReply;
     }
 
-    public void setSupportMessage(String supportMessage) {
-        this.supportMessage = supportMessage;
+    public void setUserReply(String userReply) {
+        this.userReply = userReply;
+    }
+
+    public String getSupportReply() {
+        return supportReply;
+    }
+
+    public void setSupportReply(String supportReply) {
+        this.supportReply = supportReply;
     }
 
     @Override
@@ -177,17 +187,18 @@ public class SupportDTO implements Serializable {
         return "SupportDTO{" +
             "id=" + getId() +
             ", supportId=" + getSupportId() +
-            ", startDate='" + getStartDate() + "'" +
+            ", createDate='" + getCreateDate() + "'" +
             ", endDate='" + getEndDate() + "'" +
-            ", userName='" + getUserName() + "'" +
+            ", name='" + getName() + "'" +
             ", email='" + getEmail() + "'" +
-            ", message='" + getMessage() + "'" +
+            ", issue='" + getIssue() + "'" +
             ", isRefund='" + getIsRefund() + "'" +
             ", isValid='" + getIsValid() + "'" +
             ", refundId=" + getRefundId() +
             ", isResolved='" + getIsResolved() + "'" +
             ", status='" + getStatus() + "'" +
-            ", supportMessage='" + getSupportMessage() + "'" +
+            ", userReply='" + getUserReply() + "'" +
+            ", supportReply='" + getSupportReply() + "'" +
             "}";
     }
 }

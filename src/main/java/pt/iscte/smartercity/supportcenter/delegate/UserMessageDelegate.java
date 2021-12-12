@@ -28,6 +28,6 @@ public class UserMessageDelegate implements JavaDelegate {
         SupportDTO support = supportProcess.getSupport();
 
         //CREATE NEW SUPPORT MESSAGE
-        messageService.save(MessageUtil.createMessage(support.getSupportId(), support.getMessage(), "REQUESTER"));
+        messageService.save(MessageUtil.createMessage(support.getSupportId(), support.getUserReply(), "REQUESTER"));
     }
 }

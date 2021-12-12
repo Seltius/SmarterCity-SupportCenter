@@ -17,16 +17,16 @@
             <column name="support_id" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="start_date" type="date">
+            <column name="create_date" type="date">
                 <constraints nullable="true" />
             </column>
-            <column name="user_name" type="varchar(255)">
+            <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="email" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="message" type="varchar(255)">
+            <column name="issue" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="is_refund" type="boolean">

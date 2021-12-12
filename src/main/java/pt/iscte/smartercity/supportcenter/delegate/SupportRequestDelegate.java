@@ -30,7 +30,7 @@ public class SupportRequestDelegate implements JavaDelegate {
         supportProcess.getSupport().setSupportId(generateUniqueId());
 
         //GENERATE START DATE AND PERSIST
-        supportProcess.getSupport().setStartDate(LocalDate.now());
+        supportProcess.getSupport().setCreateDate(LocalDate.now());
         supportService.save(supportProcess.getSupport());
     }
 

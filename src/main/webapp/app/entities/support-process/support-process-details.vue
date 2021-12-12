@@ -30,15 +30,15 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.startDate')">startDate</label>
+                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.createDate')">createDate</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="startDate"
-                    id="support-startDate"
-                    data-cy="startDate"
-                    v-model="supportProcess.support.startDate"
+                    name="createDate"
+                    id="support-createDate"
+                    data-cy="createDate"
+                    v-model="supportProcess.support.createDate"
                   />
                 </div>
               </div>
@@ -58,15 +58,15 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.userName')">userName</label>
+                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.name')">name</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="userName"
-                    id="support-userName"
-                    data-cy="userName"
-                    v-model="supportProcess.support.userName"
+                    name="name"
+                    id="support-name"
+                    data-cy="name"
+                    v-model="supportProcess.support.name"
                   />
                 </div>
               </div>
@@ -86,15 +86,15 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.message')">message</label>
+                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.issue')">issue</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="message"
-                    id="support-message"
-                    data-cy="message"
-                    v-model="supportProcess.support.message"
+                    name="issue"
+                    id="support-issue"
+                    data-cy="issue"
+                    v-model="supportProcess.support.issue"
                   />
                 </div>
               </div>
@@ -170,17 +170,31 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.supportMessage')"
-                    >supportMessage</label
+                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.userReply')">userReply</label>
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="userReply"
+                    id="support-userReply"
+                    data-cy="userReply"
+                    v-model="supportProcess.support.userReply"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.supportProcess.supportReply')"
+                    >supportReply</label
                   >
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="supportMessage"
-                    id="support-supportMessage"
-                    data-cy="supportMessage"
-                    v-model="supportProcess.support.supportMessage"
+                    name="supportReply"
+                    id="support-supportReply"
+                    data-cy="supportReply"
+                    v-model="supportProcess.support.supportReply"
                   />
                 </div>
               </div>

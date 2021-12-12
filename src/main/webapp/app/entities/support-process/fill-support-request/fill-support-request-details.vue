@@ -9,15 +9,15 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.userName')">userName</label>
+              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.name')">name</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="userName"
-                id="support-userName"
-                data-cy="userName"
-                v-model="taskContext.supportProcess.support.userName"
+                name="name"
+                id="support-name"
+                data-cy="name"
+                v-model="taskContext.supportProcess.support.name"
               />
             </div>
             <div class="form-group">
@@ -33,15 +33,15 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.message')">message</label>
+              <label class="form-control-label" v-text="$t('smarterCitySupportCenterApp.fillSupportRequest.issue')">issue</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="message"
-                id="support-message"
-                data-cy="message"
-                v-model="taskContext.supportProcess.support.message"
+                name="issue"
+                id="support-issue"
+                data-cy="issue"
+                v-model="taskContext.supportProcess.support.issue"
               />
             </div>
           </template>

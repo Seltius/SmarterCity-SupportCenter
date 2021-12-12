@@ -18,9 +18,9 @@
         "title": "Fill Support Request"
       },
       "id": "ID",
-      "userName": "User Name",
+      "name": "Name",
       "email": "Email",
-      "message": "Message"
+      "issue": "Issue"
     }
   }
 }

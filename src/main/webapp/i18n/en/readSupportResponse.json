@@ -19,11 +19,9 @@
       },
       "id": "ID",
       "supportId": "Support Id",
-      "startDate": "Start Date",
-      "userName": "User Name",
-      "email": "Email",
-      "message": "Message",
-      "supportMessage": "Support Message",
+      "createDate": "Create Date",
+      "issue": "Issue",
+      "userReply": "User Reply",
       "isResolved": "Is Resolved"
     }
   }
