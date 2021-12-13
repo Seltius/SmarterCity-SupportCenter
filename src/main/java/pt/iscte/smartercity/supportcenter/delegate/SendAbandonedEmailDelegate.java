@@ -14,9 +14,9 @@ import pt.iscte.smartercity.supportcenter.service.SupportService;
 import pt.iscte.smartercity.supportcenter.service.dto.SupportProcessDTO;
 
 @Component
-public class SendClosedEmailDelegate implements JavaDelegate {
+public class SendAbandonedEmailDelegate implements JavaDelegate {
 
-    private static final Logger log = LoggerFactory.getLogger(SendClosedEmailDelegate.class);
+    private static final Logger log = LoggerFactory.getLogger(SendAbandonedEmailDelegate.class);
 
     @Autowired
     SupportService supportService;
@@ -29,7 +29,7 @@ public class SendClosedEmailDelegate implements JavaDelegate {
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        log.info("RUNNING DELEGATE TASK: SendClosedEmailDelegate");
+        log.info("RUNNING DELEGATE TASK: SendAbandonedEmailDelegate");
         Context context = new Context(Locale.getDefault());
 
         //GET PROCESS INSTANCE
@@ -39,7 +39,7 @@ public class SendClosedEmailDelegate implements JavaDelegate {
         String to = supportProcess.getSupport().getEmail();
         String subject = "[SmarterCity] Support Request Nr." + supportProcess.getSupport().getSupportId();
         context.setVariable("support", supportProcess.getSupport());
-        String content = templateEngine.process("mail/fixedSupportRequest", context);
+        String content = templateEngine.process("mail/abandonedSupportRequest", context);
 
         //SEND E-MAIL
         mailService.sendEmail(to, subject, content, false, true);

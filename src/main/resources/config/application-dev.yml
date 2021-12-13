@@ -23,7 +23,7 @@ logging:
 spring:
   devtools:
     restart:
-      enabled: true
+      enabled: false
       additional-exclude: static/**,.h2.server.properties
     livereload:
       enabled: false # we use Webpack dev server + BrowserSync for livereload

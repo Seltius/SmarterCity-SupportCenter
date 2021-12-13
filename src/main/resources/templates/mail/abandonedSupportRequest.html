@@ -8,7 +8,10 @@
     <p>Dear <span th:text="${support.name}">name</span></p>
     <p>Ticket Number: <b th:text="${support.supportId}">supportId</b></p>
     <p>Ticket Issue: <b th:text="${support.issue}">issue</b></p>
-    <p>Your issue is now considered <b th:text="${support.status}">status</b>, therefore, we are closing the support request.</p>
+    <p>
+      As you did not reply in useful time, your issue is now considered <b th:text="${support.status}">status</b>, we will not take any
+      further actions for the reported issue.
+    </p>
     <p>If there is anything we can help you with, please create a new support request.</p>
     <br />
     <p>We hope you have a great day!</p>
