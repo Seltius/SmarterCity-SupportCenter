@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+  <head>
+    <title>Travel Plan Summary</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p>Dear <span th:text="${support.name}">name</span></p>
+    <p>Ticket Number: <b th:text="${support.supportId}">supportId</b></p>
+    <p>Ticket Issue: <b th:text="${support.issue}">issue</b></p>
+    <p>
+      Your refund status is <b th:text="${support.status}">status</b>, therefore, if you are receiving this e-mail, it means we considered
+      your refund completed.
+    </p>
+    <p>If there is anything we can help you with, please create a new support request.</p>
+    <br />
+    <p>We hope you have a great day!</p>
+
+    <p>
+      Thanks,
+      <br />
+      <em>Smarter Citry Support Team</em>
+    </p>
+  </body>
+</html>

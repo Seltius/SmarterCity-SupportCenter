@@ -11,22 +11,22 @@ import pt.iscte.smartercity.supportcenter.service.SupportService;
 import pt.iscte.smartercity.supportcenter.service.dto.SupportProcessDTO;
 
 @Component
-public class StatusAbandonedDelegate implements JavaDelegate {
+public class StatusConfirmedDelegate implements JavaDelegate {
 
-    private static final Logger log = LoggerFactory.getLogger(StatusAbandonedDelegate.class);
+    private static final Logger log = LoggerFactory.getLogger(StatusConfirmedDelegate.class);
 
     @Autowired
     SupportService supportService;
 
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        log.info("RUNNING DELEGATE TASK: StatusAbandonedDelegate");
+        log.info("RUNNING DELEGATE TASK: StatusConfirmedDelegate");
 
         //GET PROCESS INSTANCE
         SupportProcessDTO supportProcess = (SupportProcessDTO) delegateExecution.getVariable("processInstance");
 
         // SET STATUS TO IN_PROGRESS AND PERSIST
-        supportProcess.getSupport().setStatus(Status.ABANDONED.getDescription());
+        supportProcess.getSupport().setStatus(Status.REFUND_ACCEPTED.getDescription());
         supportService.save(supportProcess.getSupport());
     }
 }

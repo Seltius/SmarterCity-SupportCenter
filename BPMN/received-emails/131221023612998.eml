@@ -1,0 +1,32 @@
+        Mon, 13 Dec 2021 14:36:12 +0000 (WET)
+Date: Mon, 13 Dec 2021 14:36:12 +0000 (WET)
+From: SmarterCity_SupportCenter@localhost
+To: jose.dantas@teste.pt
+Message-ID: <735524323.0.1639406172936@localhost>
+Subject: [SmarterCity] Support Request Nr.1639406131
+MIME-Version: 1.0
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Travel Plan Summary</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p>Dear <span>jose joao dantas</span></p>
+    <p>Ticket Number: <b>1639406131</b></p>
+    <p>Ticket Issue: <b>refund test</b></p>
+    <p>Your refund status is <b>REFUND DECLINED</b>, therefore, if you are receiving this e-mail, it means we considered your refund completed.</p>
+    <p>If there is anything we can help you with, please create a new support request.</p>
+    <br />
+    <p>We hope you have a great day!</p>
+
+    <p>
+      Thanks,
+      <br />
+      <em>Smarter Citry Support Team</em>
+    </p>
+  </body>
+</html>

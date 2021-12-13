@@ -61,13 +61,7 @@ public class RefundProcessService {
         //Saving the domainEntity
         refundRepository.save(refundProcess.getRefund());
 
-        //Creating the process instance in the Camunda and setting it in the process entity
-        ProcessInstance processInstance = processInstanceService.create(
-            BPMN_PROCESS_DEFINITION_ID,
-            "Refund#" + refundProcess.getRefund().getId(),
-            refundProcess
-        );
-        refundProcess.setProcessInstance(processInstance);
+        refundProcess.setProcessInstance(refundProcess.getProcessInstance());
 
         //Saving the process entity
         refundProcess = refundProcessRepository.save(refundProcess);

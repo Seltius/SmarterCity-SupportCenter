@@ -1,8 +1,7 @@
 package pt.iscte.smartercity.supportcenter.delegate;
 
 import java.util.Locale;
-import org.akip.domain.enumeration.StatusProcessDefinition;
-import org.akip.domain.enumeration.StatusProcessInstance;
+import liquibase.pro.packaged.A;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.slf4j.Logger;
@@ -14,18 +13,14 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import pt.iscte.smartercity.supportcenter.service.MailService;
 import pt.iscte.smartercity.supportcenter.service.SupportProcessService;
 import pt.iscte.smartercity.supportcenter.service.SupportService;
+import pt.iscte.smartercity.supportcenter.service.dto.RefundProcessDTO;
 import pt.iscte.smartercity.supportcenter.service.dto.SupportProcessDTO;
 
 @Component
-public class SendAbandonedEmailDelegate implements JavaDelegate {
-
-    private static final Logger log = LoggerFactory.getLogger(SendAbandonedEmailDelegate.class);
+public class SendStatusEmailDelegate implements JavaDelegate {
 
     @Autowired
     SupportService supportService;
-
-    @Autowired
-    SupportProcessService supportProcessService;
 
     @Autowired
     MailService mailService;
@@ -33,25 +28,27 @@ public class SendAbandonedEmailDelegate implements JavaDelegate {
     @Autowired
     SpringTemplateEngine templateEngine;
 
+    @Autowired
+    SupportProcessService supportProcessService;
+
+    private static final Logger log = LoggerFactory.getLogger(SendStatusEmailDelegate.class);
+
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
-        log.info("RUNNING DELEGATE TASK: SendAbandonedEmailDelegate");
+        log.info("RUNNING DELEGATE TASK: SendStatusEmailDelegate");
         Context context = new Context(Locale.getDefault());
 
         //GET PROCESS INSTANCE
-        SupportProcessDTO supportProcess = (SupportProcessDTO) delegateExecution.getVariable("processInstance");
+        RefundProcessDTO refundProcess = (RefundProcessDTO) delegateExecution.getVariable("processInstance");
+        SupportProcessDTO supportProcess = supportProcessService.findByProcessInstanceId(refundProcess.getProcessInstance().getId()).get();
 
         //PREPARE EMAIL
         String to = supportProcess.getSupport().getEmail();
         String subject = "[SmarterCity] Support Request Nr." + supportProcess.getSupport().getSupportId();
         context.setVariable("support", supportProcess.getSupport());
-        String content = templateEngine.process("mail/abandonedSupportRequest", context);
+        String content = templateEngine.process("mail/statusRefundRequest", context);
 
         //SEND E-MAIL
         mailService.sendEmail(to, subject, content, false, true);
-
-        //END PROCESS
-        supportProcess.getProcessInstance().setStatus(StatusProcessInstance.CANCELED);
-        supportProcess.getProcessInstance().getProcessDefinition().setStatus(StatusProcessDefinition.INACTIVE);
     }
 }
