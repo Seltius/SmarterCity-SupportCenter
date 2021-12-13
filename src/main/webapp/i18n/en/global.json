@@ -23,6 +23,8 @@
         "readSupportResponse": "Read Support Response",
         "message": "Message",
         "messageProcess": "Message Process",
+        "analyseRefundRequest": "Analyse Refund Request",
+        "fillRefundForm": "Fill Refund Form",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

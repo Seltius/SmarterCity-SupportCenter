@@ -1,0 +1,25 @@
+{
+  "smarterCitySupportCenterApp": {
+    "fillRefundForm": {
+      "home": {
+        "title": "Fill Refund Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fill Refund Form",
+        "createOrEditLabel": "Create or edit a Fill Refund Form",
+        "notFound": "No Fill Refund Forms found"
+      },
+      "created": "A new Fill Refund Form is created with identifier {{ param }}",
+      "updated": "A Fill Refund Form is updated with identifier {{ param }}",
+      "deleted": "A Fill Refund Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fill Refund Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Fill Refund Form"
+      },
+      "id": "ID",
+      "amount": "Amount",
+      "method": "Method"
+    }
+  }
+}

@@ -44,6 +44,14 @@ const MessageDetails = () => import('@/entities/message/message-details.vue');
 const MessageProcessDetails = () => import('@/entities/message-process/message-process-details.vue');
 // prettier-ignore
 const MessageProcessList = () => import('@/entities/message-process/message-process-list.vue');
+// prettier-ignore
+const SupportProcess_AnalyseRefundRequestDetails = () => import('@/entities/support-process/analyse-refund-request/analyse-refund-request-details.vue');
+// prettier-ignore
+const SupportProcess_AnalyseRefundRequestExecute = () => import('@/entities/support-process/analyse-refund-request/analyse-refund-request-execute.vue');
+// prettier-ignore
+const RefundProcess_FillRefundFormDetails = () => import('@/entities/refund-process/fill-refund-form/fill-refund-form-details.vue');
+// prettier-ignore
+const RefundProcess_FillRefundFormExecute = () => import('@/entities/refund-process/fill-refund-form/fill-refund-form-execute.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -171,6 +179,30 @@ export default [
     path: '/process-definition/MessageProcess/instances',
     name: 'MessageProcessList',
     component: MessageProcessList,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/SupportProcess/task/AnalyseRefundRequest/:taskInstanceId/view',
+    name: 'SupportProcess_AnalyseRefundRequestDetails',
+    component: SupportProcess_AnalyseRefundRequestDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/SupportProcess/task/AnalyseRefundRequest/:taskInstanceId/execute',
+    name: 'SupportProcess_AnalyseRefundRequestExecute',
+    component: SupportProcess_AnalyseRefundRequestExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/SupportProcess/task/FillRefundForm/:taskInstanceId/view',
+    name: 'RefundProcess_FillRefundFormDetails',
+    component: RefundProcess_FillRefundFormDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/process-definition/SupportProcess/task/FillRefundForm/:taskInstanceId/execute',
+    name: 'RefundProcess_FillRefundFormExecute',
+    component: RefundProcess_FillRefundFormExecute,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

@@ -1,0 +1,29 @@
+{
+  "smarterCitySupportCenterApp": {
+    "analyseRefundRequest": {
+      "home": {
+        "title": "Analyse Refund Requests",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Analyse Refund Request",
+        "createOrEditLabel": "Create or edit a Analyse Refund Request",
+        "notFound": "No Analyse Refund Requests found"
+      },
+      "created": "A new Analyse Refund Request is created with identifier {{ param }}",
+      "updated": "A Analyse Refund Request is updated with identifier {{ param }}",
+      "deleted": "A Analyse Refund Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Analyse Refund Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Analyse Refund Request"
+      },
+      "id": "ID",
+      "supportId": "Support Id",
+      "createDate": "Create Date",
+      "name": "Name",
+      "email": "Email",
+      "issue": "Issue",
+      "isValid": "Is Valid"
+    }
+  }
+}
