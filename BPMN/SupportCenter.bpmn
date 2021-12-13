@@ -186,7 +186,7 @@ HelpDesk Team</bpmn:documentation>
       <bpmn:outgoing>Flow_1b4owce</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_1b4owce" sourceRef="ChangeSupportStatusConfirmed" targetRef="FillRefundForm" />
-    <bpmn:serviceTask id="ProcessRefund" name="Process Refund" camunda:delegateExpression="${progressRefundDelegate}">
+    <bpmn:serviceTask id="ProcessRefund" name="Process Refund" camunda:delegateExpression="${processRefundDelegate}">
       <bpmn:incoming>Flow_03p8cdr</bpmn:incoming>
       <bpmn:outgoing>Flow_1rsi7b5</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -194,6 +194,18 @@ HelpDesk Team</bpmn:documentation>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="SupportProcess">
+      <bpmndi:BPMNEdge id="Flow_1rsi7b5_di" bpmnElement="Flow_1rsi7b5">
+        <di:waypoint x="1310" y="930" />
+        <di:waypoint x="1310" y="835" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1b4owce_di" bpmnElement="Flow_1b4owce">
+        <di:waypoint x="910" y="970" />
+        <di:waypoint x="1040" y="970" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1eqsn8s_di" bpmnElement="Flow_1eqsn8s">
+        <di:waypoint x="910" y="810" />
+        <di:waypoint x="1285" y="810" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1ippf8x_di" bpmnElement="Flow_1ippf8x">
         <di:waypoint x="928" y="180" />
         <di:waypoint x="1000" y="180" />
@@ -326,18 +338,6 @@ HelpDesk Team</bpmn:documentation>
       <bpmndi:BPMNEdge id="Flow_07thyrb_di" bpmnElement="Flow_07thyrb">
         <di:waypoint x="208" y="300" />
         <di:waypoint x="290" y="300" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1eqsn8s_di" bpmnElement="Flow_1eqsn8s">
-        <di:waypoint x="910" y="810" />
-        <di:waypoint x="1285" y="810" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1b4owce_di" bpmnElement="Flow_1b4owce">
-        <di:waypoint x="910" y="970" />
-        <di:waypoint x="1040" y="970" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1rsi7b5_di" bpmnElement="Flow_1rsi7b5">
-        <di:waypoint x="1310" y="930" />
-        <di:waypoint x="1310" y="835" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Event_10ictu5_di" bpmnElement="StartSupport">
         <dc:Bounds x="172" y="282" width="36" height="36" />
