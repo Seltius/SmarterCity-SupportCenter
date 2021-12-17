@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0p2eprr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
   <bpmn:process id="SupportProcess" name="Support Center" isExecutable="true">
-    <bpmn:documentation># Welcome Test
-Your satisfaction is our top priority and we're looking forward to assisting you.
-Please submit your request and soon as possible we will reply to you.
-
-
-
-
-Best Regards,
-HelpDesk Team</bpmn:documentation>
+    <bpmn:documentation># SmarterCity
+This application was developed by a group of students in the course unit Modelling  and Implementation of Processes (MIP) of the Master in Informatics and Management (MIG) of ISCTE, through the modelling  of a process in the Signavio platform, its automation and improvement in Camunda Modeler and implementation through AgileKIP (based on the Jhispter generator) with Vue (FrontEnd) and Spring (Backend) Technologies.</bpmn:documentation>
     <bpmn:startEvent id="StartSupport" name="Start Support">
       <bpmn:outgoing>Flow_07thyrb</bpmn:outgoing>
     </bpmn:startEvent>

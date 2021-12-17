@@ -73,6 +73,21 @@
                 v-model="$v.taskContext.supportProcess.support.issue.$model"
               />
             </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Message History</label>
+              <ul style="list-style-type: none">
+                <li v-for="(message, index) in taskContext.supportProcess.support.messageList" :key="index">
+                  <p style="margin: 0" v-if="message.messageType === 'SUPPORT'">
+                    <b>[{{ message.date }}] Support:</b> {{ message.value }}
+                  </p>
+                  <p style="margin: 0" v-if="message.messageType === 'REQUESTER'">
+                    <b>[{{ message.date }}] Requester:</b> {{ message.value }}
+                  </p>
+                </li>
+              </ul>
+            </div>
+
             <div class="form-group">
               <label
                 class="form-control-label"
