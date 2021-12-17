@@ -49,9 +49,5 @@ public class SendAbandonedEmailDelegate implements JavaDelegate {
 
         //SEND E-MAIL
         mailService.sendEmail(to, subject, content, false, true);
-
-        //END PROCESS
-        supportProcess.getProcessInstance().setStatus(StatusProcessInstance.CANCELED);
-        supportProcess.getProcessInstance().getProcessDefinition().setStatus(StatusProcessDefinition.INACTIVE);
     }
 }

@@ -335,7 +335,7 @@
         <dependency>
             <groupId>com.github.AgileKip</groupId>
             <artifactId>akip-core-community</artifactId>
-            <version>2dd4f6c20a81185468a3cb4351831395bd1f9eab</version>
+            <version>27a6bcfca96255bef1e437d0e6ce9011ffa577a0</version>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
