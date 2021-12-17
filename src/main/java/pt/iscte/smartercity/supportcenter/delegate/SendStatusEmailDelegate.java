@@ -39,8 +39,7 @@ public class SendStatusEmailDelegate implements JavaDelegate {
         Context context = new Context(Locale.getDefault());
 
         //GET PROCESS INSTANCE
-        RefundProcessDTO refundProcess = (RefundProcessDTO) delegateExecution.getVariable("processInstance");
-        SupportProcessDTO supportProcess = supportProcessService.findByProcessInstanceId(refundProcess.getProcessInstance().getId()).get();
+        SupportProcessDTO supportProcess = (SupportProcessDTO) delegateExecution.getVariable("processInstance");
 
         //PREPARE EMAIL
         String to = supportProcess.getSupport().getEmail();
