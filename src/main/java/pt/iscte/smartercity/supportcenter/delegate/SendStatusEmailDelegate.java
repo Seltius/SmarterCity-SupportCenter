@@ -1,7 +1,6 @@
 package pt.iscte.smartercity.supportcenter.delegate;
 
 import java.util.Locale;
-import liquibase.pro.packaged.A;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.slf4j.Logger;
