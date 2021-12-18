@@ -37,9 +37,16 @@ public class SendStatusEmailDelegate implements JavaDelegate {
     public void execute(DelegateExecution delegateExecution) throws Exception {
         log.info("RUNNING DELEGATE TASK: SendStatusEmailDelegate");
         Context context = new Context(Locale.getDefault());
+        SupportProcessDTO supportProcess;
 
-        //GET PROCESS INSTANCE
-        SupportProcessDTO supportProcess = (SupportProcessDTO) delegateExecution.getVariable("processInstance");
+        //THIS DELEGATE IS USED TO SEND AN EMAIL IN CASE OF A SUB-PROCESS REFUND HAPPENS OR
+        // IF A CERTAIN SUPPORT REQUEST IS A REFUND BUT IT WAS DECLINED
+        //WE NEED TO USE INSTANCEOF TO SUPPORT BOTH BEHAVIORS
+        Object process = delegateExecution.getVariable("processInstance");
+        if (process instanceof RefundProcessDTO) {
+            RefundProcessDTO refundProcess = (RefundProcessDTO) process;
+            supportProcess = supportProcessService.findByProcessInstanceId(refundProcess.getProcessInstance().getId()).get();
+        } else supportProcess = (SupportProcessDTO) process;
 
         //PREPARE EMAIL
         String to = supportProcess.getSupport().getEmail();
